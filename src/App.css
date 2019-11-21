@@ -1,11 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,4 +11,18 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+table {
+  width:600px;
+  border: 1px solid lightgrey;
+  border-radius: 3x;
+}
+th{
+  text-align: left;
+  padding-left: 4px;
+}
+td{
+  width:300px;
+  padding-left: 4px;
 }

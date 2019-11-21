@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "tailwindcss": "^1.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "concurrently \"npm run start:twd\" \"npm run start:cra\"",
+    "build": "npm run build:twd && npm run build:cra",
+    "start:cra": "react-scripts start",
+    "build:cra": "react-scripts build",
+    "start:twd": "postcss ./src/styles/tailwind.pcss -o ./src/styles/tailwind.css --watch",
+    "build:twd": "postcss ./src/styles/tailwind.pcss -o ./src/styles/tailwind.css --env production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -27,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "concurrently": "^5.0.0",
+    "postcss-cli": "^6.1.3"
   }
 }
